@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"> 
+    <!-- 
+    Smart developers always View Source. 
+    
+    This application was built using Adobe Flex, an open source framework
+    for building rich Internet applications that get delivered via the
+    Flash Player or to desktops via Adobe AIR. 
+    
+    Learn more about Flex at http://flex.org 
+    // -->
+    <head>
+        <title>haha</title>
+        <meta name="google" value="notranslate" />         
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css" media="screen"> 
+        </style>
+        
+            
+        <script type="text/javascript" src="swfobject.js"></script>
+        <script type="text/javascript">
+        
+        	
+        
+            var swfVersionStr = "11.1.0";
+            //var xiSwfUrlStr = "playerProductInstall.swf";
+            var xiSwfUrlStr = "";
+            var flashvars = {};
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#ffffff";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            var attributes = {};
+            attributes.id = "Main";
+            attributes.name = "Main";
+            attributes.align = "middle";
+            swfobject.embedSWF(
+                "Main.swf", "flashContent", 
+                "320", "240", 
+                swfVersionStr, xiSwfUrlStr, 
+                flashvars, params, attributes);
+            swfobject.createCSS("#flashContent", "display:block;text-align:left;");
+            
+			function playerProcess(_cur){
+				console.log(_cur);
+			}
+        </script>
+    </head>
+    <body>
+        <button onclick="set()">set</button>
+        <button onclick="play()">play</button>
+        <button onclick="pause()">pause</button>
+        <div id="flashContent">
+            <p>
+                To view this page ensure that Adobe Flash Player version 
+                11.1.0 or greater is installed. 
+            </p>
+            <script type="text/javascript"> 
+                var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://"); 
+                document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
+                                + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
+            </script> 
+        </div>
+   </body>
+   <script>
+   document.write('<br>'+navigator.userAgent);
+   
+   function set(){
+   	window.Main.setUrl('http://mres.kktv8.com/kktv/video/2014/08/20/18/14218176_1047.mp4',true);
+   	console.log(window.Main.getLength());
+   }
+   function play(){
+   	window.Main.play();
+   }
+   function pause(){
+   	window.Main.pause();
+   }
+   </script>
+</html>

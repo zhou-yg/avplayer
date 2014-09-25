@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>移动音频格式</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>	
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		<audio src="omr.mp3" controls ></audio>
+		<br />
+		<br />
+		<br />
+		<br />
+		<button onclick="play()">play</button>
+		<br />
+		<br />
+		<br />
+		<audio id="a1"  controls ></audio>
+	</body>
+	<script type="text/javascript" src="jquery1x.js"></script>
+	<script>
+		var a = $('#a1')[0];
+		var b = 0;		
+		a.addEventListener('timeupdate',function(){
+			
+		});
+		
+		a.style.display = 'none';
+		a.style.visiable = 'hidden';
+		a.style.opacity = 0;
+		
+		$(a).hide();
+		
+		function play(){
+			a.src = 'omr.wav';
+			a.load();
+			a.play();
+		}
+	</script>
+</html>

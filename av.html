@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<!--
+	Smart developers always View Source.
+
+	This application was built using Adobe Flex, an open source framework
+	for building rich Internet applications that get delivered via the
+	Flash Player or to desktops via Adobe AIR.
+
+	Learn more about Flex at http://flex.org
+	// -->
+	<head>
+		<title>av</title>
+		<meta name="google" value="notranslate" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<style type="text/css" media="screen">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			button {
+				width: 100px;
+				height: 80px;
+			}
+		</style>
+		<script type="text/javascript" src="swfobject.js"></script>
+		<script type="text/javascript" src="zplayer.js"></script>
+	</head>
+	<body>
+		<div id="flashContent"></div>
+		<button onclick="play()">
+			play
+		</button>
+		<button onclick="pause()">
+			pause
+		</button>
+	</body>
+	<script>
+		function flashInsertComplete(_m) {
+			console.log(_m);
+		}
+
+		var zp = new Zplayer();
+		zp.init({
+			name : 'zp',
+			baseDir : '',
+			id : 'flashContent',
+			type : 'a',
+			css : {
+				width : '320px',
+				height : '320px'
+			},
+			callbacks : {
+				canplay : function(_e) {
+					console.log('canplay');
+				},
+				error : function(_e) {
+					alert('error');
+				},
+				playerStart : function(_length) {
+					console.log(arguments[0]);
+				},
+				playerProcess : function() {
+					console.log(arguments[0], arguments[1]);
+				},
+				playerEnd : function() {
+					console.log(arguments[0]);
+				}
+			}
+		});
+		zp.setUrl('omr.mp3', false, false);
+
+		function play() {
+			zp.play();
+		}
+		function pause() {
+			zp.pause();
+		}
+	</script>
+</html>
