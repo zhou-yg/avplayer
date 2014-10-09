@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>NULL</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>	
+	</head>
+	<style type="text/css">
+		
+	</style>
+	<body>
+		<div class="a">
+			<div class="b">
+				
+			</div>
+			<div class="b">
+				
+			</div>
+			<div class="b">
+				<div id="ob" class="c">
+				
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="jquery1x.js"></script>
+	<script>
+	function queryParents(_ele){
+		_ele = $(_ele);
+		if(_ele.parents().length!=0){
+			for(var i=0;i<_ele.parents().length;i++){
+				console.log(_ele.parents()[i]);
+				queryParents(_ele.parents()[i]);
+			}
+		}
+	}
+	function queryParents2(_ele){
+		_ele = $(_ele);
+		if(_ele.parents().length!=0){
+			console.log(_ele.parents()[0]);
+			queryParents2(_ele.parents()[0]);
+		}
+	}
+	function queryParents3(_ele){
+		_ele = $(_ele);
+		if(_ele.parents().length!=0){
+			for(var i=0;i<_ele.parents().length;i++){
+				console.log(_ele.parents()[i]);
+			}
+			console.log('----');
+			queryParents3(_ele.parents()[0]);
+		}
+	}
+	queryParents2(document.getElementById('ob'));
+	</script>
+</html>

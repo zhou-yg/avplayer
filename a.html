@@ -6,10 +6,12 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>	
 	</head>
 	<style type="text/css">
-		
+		video{
+			width:320px;
+		}
 	</style>
 	<body>
-		<audio src="omr.mp3" controls ></audio>
+		<audio src='http://mres.kktv8.com/kktv/audio/2014/09/26/11/1008502_250.mp4' controls ></audio>
 		<br />
 		<br />
 		<br />
@@ -18,7 +20,17 @@
 		<br />
 		<br />
 		<br />
-		<audio id="a1"  controls ></audio>
+		<audio id="a1" src="http://mres.kktv8.com/kktv/audio/2014/09/26/10/1008502_4136.aac" controls >
+			
+		</audio>
+		
+		<video src="http://mres.kktv8.com/kktv/audio/2014/09/26/11/1008502_250.mp4" controls ></video>
+		<br />
+		<br />
+		<br />
+		
+		<video id='myV' src="http://mres.kktv8.com/kktv/video/2014/09/26/17/1008502_2729.mp4" controls ></video>
+		
 	</body>
 	<script type="text/javascript" src="jquery1x.js"></script>
 	<script>
@@ -39,5 +51,9 @@
 			a.load();
 			a.play();
 		}
+		$('#myV')[0].preload = 'metadata';
+		$('#myV')[0].addEventListener('loadedmetadata',function(_e,b,c,d){
+			console.log(_e);
+		});
 	</script>
 </html>

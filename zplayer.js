@@ -1,27 +1,3 @@
-/*
- var swfVersionStr = "11.1.0";
- var xiSwfUrlStr = '';
- var flashvars = {};
- var params = {
- quality:'high',
- bgcolor:'#ffffff',
- allowscriptaccess:'sameDomain',
- allowfullscreen:'false'
- };
- var attributes = {
- id:'Main',
- name:'Main'
- };
- swfobject.embedSWF("Main.swf", _containerId, _width, _height, swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
- */
-/*
- _paramObj:
- name:String //just a name
- baseDir:String //a dir to set flash player
-
- type:pre:'flash||html5',post:'audio'||'video' //type:{flash:{audio,video},html5:{audio,video}};
- controls:boolean //
- */
 (function(){
 	
     var UA = {};
@@ -93,8 +69,6 @@
 		};
 		Zplayer.prototype.createHaudio = function() {
 
-			document.write('ha');
-
 			var mediaId = this.name + '_audio';
 			var aObj = document.createElement('audio');
 			aObj.setAttribute('id',mediaId);
@@ -109,7 +83,6 @@
 			return this;
 		};
 		Zplayer.prototype.createHvideo = function() {
-			document.write('hv');
 			
 			var mediaId = this.name + '_video';
 			var vObj = document.createElement('video');
@@ -127,7 +100,6 @@
 			return this;
 		};
 		Zplayer.prototype.createFaudio = function() {
-			document.write('fa');
 			
  			var swfVersionStr = "11.1.0";
  			var xiSwfUrlStr = '';
@@ -146,28 +118,8 @@
 
 			return this;
 		};
-		Zplayer.prototype.createFvideo = function() {
-
-			document.write('hv');
-			var o = this;
-
- 			var swfVersionStr = "11.1.0";
- 			var xiSwfUrlStr = '';
- 			var flashvars = {};
- 			var params = {
- 				quality:'high',
- 				bgcolor:'#ffffff',
- 				allowscriptaccess:'sameDomain',
- 				allowfullscreen:'false'
- 			};
-			var attributes = {
-				id:this.obj.id,
-				name:this.obj.id
- 			};
-		    swfobject.embedSWF("Main.swf", this.obj.id, this.css.width, this.css.height, swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
-
-			return this;
-		};
+		Zplayer.prototype.createFvideo = Zplayer.prototype.createFaudio;
+		
 		Zplayer.prototype.pause = function(){
 			this.obj.pause();
 		};
